@@ -8,6 +8,15 @@
   to = "/index.html"
   status = 200
   force = true
+  conditions = {Language = ["en"], Country = ["US"]}
 
+# Enable custom domains/subdomains
 [[plugins]]
   package = "@netlify/plugin-local-install-core"
+
+[dev]
+  framework = "#custom"
+  command = "npm run dev"
+  targetPort = 5173
+  port = 8888
+  publish = "dist"
